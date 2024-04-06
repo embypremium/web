@@ -1,0 +1,128 @@
+/* Estilo para el contenedor de texto */
+.movie-description {
+  max-height: calc(1.2em * 5); /* Ajusta el número de líneas máximas que deseas mostrar */
+  overflow: hidden;
+  line-height: 1.2em; /* Ajusta el espaciado entre líneas según el tamaño de tu fuente */
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Número de líneas a mostrar */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis; /* Añade puntos suspensivos (...) al final del texto */
+}
+
+/* Estilos para la vista en cuadrícula */
+.movie.grid {
+  display: inline-block;
+  width: calc(25% - 20px);
+  margin: 10px;
+  vertical-align: top;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Estilos para la imagen en la vista de cuadrícula */
+.movie.grid .movie-poster {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+/* Estilos para hacer que el diseño sea más responsivo */
+@media (max-width: 992px) {
+  .movie.grid {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .movie.grid {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .movie.grid {
+    width: calc(100% - 20px);
+  }
+}
+
+/* Estilos para la vista en filas */
+.movie.list {
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  color: white;
+}
+
+/* Media query para dispositivos con una anchura máxima de 768px */
+@media (max-width: 768px) {
+  .movie.list {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Centra los elementos en el eje transversal */
+    text-align: center; /* Centra el texto */
+  }
+}
+
+/* Estilos comunes para todas las películas */
+.movie img {
+  width: auto;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+.movie .movie-info {
+  flex-grow: 1;
+}
+
+#clearButton {
+  display: none;
+}
+
+.dropdown-menu {
+  padding: 0.5rem;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select:focus {
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+#scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 5px;
+  }
+
+/* Estilos para hacer más pequeñas las imágenes de actores y director */
+.director {
+  text-align: center;
+  /* Centrar el contenido del div */
+}
+
+.director img.director-image,
+.actor img.actor-image {
+  width: 90px; /* Ancho deseado */
+  height: 120px; /* Altura deseada */
+}
+
+/* Ajustes adicionales según sea necesario */
+.actor p,
+.director p {
+  margin-top: 5px; /* Separación entre la imagen y el nombre */
+  font-size: 14px; /* Tamaño de fuente del nombre del actor o director */
+}
